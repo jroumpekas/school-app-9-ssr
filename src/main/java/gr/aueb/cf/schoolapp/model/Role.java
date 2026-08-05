@@ -29,8 +29,8 @@ public class Role {
     private Set<User> users = new HashSet<>();
 
     @Setter(AccessLevel.NONE)
-    @Getter(AccessLevel.PROTECTED)
-    @ManyToMany(fetch = FetchType.EAGER)
+    @Getter(AccessLevel.PACKAGE)
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "roles_capabilities",
             joinColumns = @JoinColumn(name = "role_id"),
             inverseJoinColumns = @JoinColumn(name = "capability_id")
@@ -38,12 +38,10 @@ public class Role {
     private Set<Capability> capabilities = new HashSet<>();
 
     public Set<Capability> getAllCapabilities() {
-
         return Set.copyOf(capabilities);
     }
 
     public Set<User> getAllUsers() {
-
         return Set.copyOf(users);
     }
 
