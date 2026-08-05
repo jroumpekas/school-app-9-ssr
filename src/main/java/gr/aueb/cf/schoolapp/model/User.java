@@ -9,7 +9,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import gr.aueb.cf.schoolapp.model.Role;
+
 import java.util.*;
 
 @Entity
